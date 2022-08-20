@@ -1,0 +1,265 @@
+@font-face {
+  font-family: roboto;
+  src: url(fonts/Roboto-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: roboto;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(2, min-content);
+}
+
+header {
+  grid-column: 2/3;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* grid-template-rows: 1fr 2fr; */
+  align-items: center;
+  gap: 10px;
+  padding: 15px 45px;
+}
+
+input + ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  align-items: center;
+  gap: 10px;
+}
+
+input + ul :first-child {
+  justify-self: end;
+}
+
+input + ul :nth-child(2) {
+  text-align: end;
+}
+
+input {
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(216, 207, 207);
+}
+
+.user {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, max-content);
+  gap: 10px;
+  justify-items: start;
+}
+
+/* .user img {
+  justify-self: end;
+} */
+
+.buttons {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+button {
+  font-size: 0.9rem;
+  width: 100%;
+  height: 100%;
+  padding: 10px 25px;
+  background-color: #0ea5e9;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 40px;
+}
+
+.sidebar {
+  grid-column: 1;
+  grid-row: 1/-1;
+
+  background-color: #3b82f6;
+  color: #f1f5f9;
+  display: grid;
+  grid-template-rows: repeat(3, max-content);
+  gap: 60px;
+  padding: 10px 0px 0px 15px;
+}
+
+.sidebar h1 {
+  font-size: 1.6rem;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar ul > li {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+.sidebar a:link,
+.sidebar a:visited {
+  text-decoration: none;
+  color: #f1f5f9;
+}
+
+a:hover {
+  /* text-decoration: underline; */
+}
+
+a:active {
+  font-size: 1.25rem;
+}
+
+.main-nav {
+  font-size: 1.3rem;
+  font-weight: bold;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 15px;
+}
+
+.sub-nav {
+  font-size: 1.3rem;
+  font-weight: bold;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+  background-color: rgb(207, 210, 211);
+  padding: 50px 30px 50px 15px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+
+  position: relative;
+}
+
+.card {
+  display: grid;
+
+  padding: 25px;
+  border-radius: 8px;
+  background-color: #fff;
+  border-left: 7px solid rgb(255, 181, 44);
+}
+
+.card p:first-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding-bottom: 3px;
+}
+
+.card p:last-child {
+  font-size: 0.95rem;
+  color: rgb(80, 80, 80); /*Use CSS variable */
+}
+
+.interact {
+  justify-self: end;
+  align-self: end;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.announcements {
+  position: relative;
+  /* grid-column: 2; */
+  /* grid-row: 1/3; */
+  /* height: min-content; */
+  background-color: #fff;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.announce {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 1px solid rgb(153, 153, 153);
+}
+/* There is a problem here in psudo element: Solved */
+.announce p:first-child {
+  padding-bottom: 3px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.announce p:last-child {
+  font-size: 0.72rem;
+  color: rgb(80, 80, 80);
+}
+
+.announce:nth-child(2) {
+  padding-top: 0;
+}
+
+.announce:last-child {
+  padding-bottom: 0;
+  border: none;
+}
+
+.trending {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 8px;
+
+  padding: 25px;
+  border-radius: 8px;
+  background-color: #fff;
+  /* grid-column: 2; */
+  /* grid-row: 2/3; */
+  /* height: min-content; */
+  position: relative;
+}
+
+.trend {
+  display: grid;
+  grid-template-columns: 2fr 7fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.trending > .trend p:first-child {
+  font-size: 0.9rem;
+}
+
+.trending > .trend p:last-child {
+  font-size: 0.85rem;
+  color: rgb(80, 80, 80);
+}
+
+.right-side {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 50px;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 1.2;
+
+  position: absolute;
+  top: -25px;
+}
